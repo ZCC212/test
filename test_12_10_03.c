@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<assert.h>
-//1.
+//1.æš´åŠ›ç§»ä½æ³•
 //void reverse(char* left, char* right)
 //{
 //	while (left < right) {
@@ -37,15 +37,18 @@
 //	}
 //	return 0;
 //}
-//2.
+//2.æŒ‡é’ˆç¿»è½¬æ³•
 int is_left_move(char* s1, char* s2)
 {
-	int len = strlen(s1);
-	//1.ÔÚs1ÖĞ×·¼ÓÒ»¸ös1×Ö·û´®
-	//strcat--erro¶Ô×Ô¼ºÊ¹ÓÃ
-	strncat(s1, s1,len);
-	//ÅĞ¶Ïs2Ö¸ÏòµÄ×Ö·û´®ÊÇ²»ÊÇs1Ö¸ÏòµÄ×Ö·û´®µÄ×Ó´®
-	//str--ÕÒ×Ó´®µÄ
+	int len1 = strlen(s1);
+	int len2 = strlen(s2);
+	if(s1 != s2)
+		return 0;
+	//1.åœ¨s1ä¸­è¿½åŠ ä¸€ä¸ªs1å­—ç¬¦ä¸²
+	//strcat--erroå¯¹è‡ªå·±ä½¿ç”¨
+	strncat(s1, s1, len1);
+	//åˆ¤æ–­s2æŒ‡å‘çš„å­—ç¬¦ä¸²æ˜¯ä¸æ˜¯s1æŒ‡å‘çš„å­—ç¬¦ä¸²çš„å­ä¸²
+	//str--æ‰¾å­ä¸²çš„
 	char* ret = strstr(s1, s2);
 	if (ret == NULL)
 	{
