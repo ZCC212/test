@@ -24,6 +24,10 @@ char* my_strstr(const char* p1, const char* p2)
 		{
 			return cur;
 		}
+		if(*s1 == '\0)
+		   {
+			  return NULL;
+		   }
 		cur++;
 	}
 	return NULL;
@@ -35,7 +39,7 @@ int main()
 	char* ret = my_strstr(p1, p2);
 	if (ret == NULL)
 	{
-		printf("ÕÒ²»µ½£¡\n");
+		printf("找不到！\n");
 	}
 	else
 	{
