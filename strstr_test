@@ -1,0 +1,22 @@
+int strStr(char * haystack, char * needle)
+{
+    int i=0,j=0;
+    int len=strlen(haystack);
+    int cnt=strlen(needle);
+    /*if(!cnt)
+        return 0;*/
+    //让字符串needle与haystack所有长度为cnt的子串全部匹配一次
+    for(i=0;i<=len-cnt;i++)//i没有必要遍历完整个haystack，只需遍历到len-cnt即可
+    {
+        for(j=0;j<cnt;j++)
+        {
+            if(haystack[i+j]!=needle[j])
+            {
+                break;
+            }
+        }
+        if(j==cnt)
+            return i;
+    }
+    return -1;
+}
